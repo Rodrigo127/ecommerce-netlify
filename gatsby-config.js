@@ -7,6 +7,12 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-react-helmet`
   ],
+  siteMetadata: {
+    title: "Sillas Kentucky",
+    url: "https://sillaskentuckymty.com",
+    description: "Buy and acquire super cool chairs."
+  }
 }
