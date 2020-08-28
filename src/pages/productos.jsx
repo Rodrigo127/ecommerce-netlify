@@ -18,6 +18,7 @@ export const pageQuery = graphql`
                     id
                     name
                     images
+                    slug
                 }
             }
         }
