@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 export default ({ priceId }) => {
+    console.log(process.env.STRIPE_PUBLIC_KEY);
 
     const [stripe, setStripe] = useState({});
     useEffect(()=>{
