@@ -1,5 +1,6 @@
 import React from 'react';
 import Price from './Price';
+import CheckoutTemp from "./CheckoutTemp";
 
 export default ({product, prices}) => {
     const price = prices[0];
@@ -21,9 +22,7 @@ export default ({product, prices}) => {
             </header>
             <div className="text-center p-6">
                 <h1 className="text-3xl uppercase mb-4">{product.name}</h1>
-                <button className="app-btn text-xl">
-                    Agregar al carrito
-                </button>
+                <CheckoutTemp priceId={price.id} />
             </div>
         </article>
     )

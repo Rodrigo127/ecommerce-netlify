@@ -21,6 +21,7 @@ module.exports = {
         downloadFiles: true
       }
     },
+    `gatsby-plugin-stripe`
   ],
   siteMetadata: {
     title: "Sillas Kentucky",
