@@ -5,7 +5,8 @@ export default ({ priceId }) => {
 
     const [stripe, setStripe] = useState({});
     useEffect(()=>{
-        setStripe(window.Stripe(process.env.STRIPE_PUBLIC_KEY))
+        //setStripe(window.Stripe(process.env.STRIPE_PUBLIC_KEY))
+        setStripe(window.Stripe("pk_test_51HDL9WHyrdmYOqrp2OE1ZXLGFZlwbTCuC7o1aHTE7deZRvXX3a9MizjfPcT2gSC3iY2IHwt8sagPFZ6azc9prhgK008qENIQec"))
     }, []); //componentDidMount
 
     const redirectToCheckout = async(ev) => {
