@@ -25,6 +25,6 @@ export default ({ priceId }) => {
     }
 
     return(
-        <button onClick={redirectToCheckout} className="app-btn text-xl">Checkout</button>
+    <button onClick={redirectToCheckout} className="app-btn text-xl">Checkout {process.env.GATSBY_STRIPE_PUBLIC_KEY}</button>
     )
 }
