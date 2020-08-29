@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
 export default ({ priceId }) => {
-    console.log(process.env.GATSBY_STRIPE_PUBLIC_KEY);
 
     const [stripe, setStripe] = useState({});
     useEffect(()=>{
@@ -25,6 +24,6 @@ export default ({ priceId }) => {
     }
 
     return(
-    <button onClick={redirectToCheckout} className="app-btn text-xl">Checkout {process.env.GATSBY_STRIPE_PUBLIC_KEY}</button>
+    <button onClick={redirectToCheckout} className="app-btn text-xl">Checkout</button>
     )
 }
