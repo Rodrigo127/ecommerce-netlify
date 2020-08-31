@@ -1,16 +1,19 @@
 import React from 'React';
 import DummyComponent from './DummyComponent';
-import { useDispatch } from 'react-redux';
+import {connect, useDispatch} from "react-redux";
 import { dummyAction } from '../state/actions/shopping_cart';
 
-export default(props) => {
+const DummyBtn = (props) => {
     const dispatch = useDispatch();
 
-    const dummy_function = () => {
-        dispatch(dummyAction())
+    const dummy_function = (ev) => {
+        dispatch(dummyAction());
     }
 
     return(
         <DummyComponent dummy_function={dummy_function} />
     )
 }
+
+const mapStateToProps = (state) => state.shopping_cart;
+export default connect(null, {dummyAction})(DummyBtn);
