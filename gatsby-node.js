@@ -9,6 +9,7 @@ exports.sourceNodes = ({ actions }) => {
     actions.createTypes(`
         type StripeProduct implements Node{
             slug: String!
+            quantityAtCart: [Int]
         }
     `);
 }
@@ -23,6 +24,9 @@ exports.createResolvers = ({ createResolvers }) => {
         StripeProduct: {
             slug: {
                 resolve: (source) => slugify(source.name, slugifyOptions)
+            },
+            quantityAtCart: {
+                resolve: 0
             }
         }
     })
@@ -36,6 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
             id
             slug
             images
+            quantityAtCart
           }
         }
       }      
