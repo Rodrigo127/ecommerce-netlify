@@ -15,6 +15,9 @@ const navItems = [
 ]
 
 export default (props) => {
+    const total = props.shopping_cart.reduce(
+        (total, product) => product.quantity + total, 0
+    );
     return(
         <header className="bg-blue-900 text-blue-100 shadow-md">
             <nav className="flex">
@@ -31,7 +34,7 @@ export default (props) => {
                     <IconContext.Provider value={{ className:"inline-block mr-2 text-xl" }}>
                         <IoMdCart />
                     </IconContext.Provider>
-                    {props.shopping_cart.length}
+                    {total}
                 </Link>
             </nav>
         </header>

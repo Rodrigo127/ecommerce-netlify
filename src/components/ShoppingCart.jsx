@@ -2,6 +2,7 @@ import React from 'react';
 import CartItem from './CartItem';
 import Total from './Total';
 import ClearShoppingCartConnected from "./ClearShoppingCartConnected";
+import CheckoutConnected from './CheckoutConnected';
 
 export default ({ shoppingCart }) => {
     return(
@@ -23,6 +24,9 @@ export default ({ shoppingCart }) => {
                 <div className="w-1/3 text-right p-6 font-semibold">
                     <Total shoppingCart={shoppingCart} />
                 </div>
+            </div>
+            <div className="p-6">
+                <CheckoutConnected shoppingCart={shoppingCart} />
             </div>
         </div>
     )
