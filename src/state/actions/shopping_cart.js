@@ -21,6 +21,9 @@ export const clearShoppingCart = () => ({
     type: CLEAR_SHOPPING_CART
 })
 
-export const dummyAction = () => ({
-    type: DUMMY_ACTION
-})
+export const dummyAction = (product={dummyProduct: "dummyProduct"}) => {
+    return{
+        type: DUMMY_ACTION, 
+        payload: product
+    }
+}

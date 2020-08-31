@@ -37,6 +37,7 @@ import { ADD_ITEM,CLEAR_SHOPPING_CART,DUMMY_ACTION } from "../actionTypes";
 
     if(action.type === DUMMY_ACTION){
         console.log("executing dummy action");
+        console.log(action.payload);
         return state;
     }   
 
