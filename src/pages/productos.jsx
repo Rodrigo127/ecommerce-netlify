@@ -19,6 +19,7 @@ export const pageQuery = graphql`
                     name
                     images
                     slug
+                    quantityAtCart
                 }
             }
         }
