@@ -1,11 +1,7 @@
 import React from 'react';
 import CartItem from './CartItem';
 import Total from './Total';
-<<<<<<< HEAD
-import ClearShoppingCartConnected from "./ClearShoppingCartConnected";
-=======
 import ClearShoppingCartConnected from './ClearShoppingCartConnected';
->>>>>>> 7c8203e6954461fc369910e9f618139b7fff066a
 
 export default ({ shoppingCart }) => {
     return(
