@@ -16,3 +16,4 @@ export const addItem = (product) => {
         payload: product
     }
 }
+
