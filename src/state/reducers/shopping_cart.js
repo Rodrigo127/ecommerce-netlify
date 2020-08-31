@@ -15,23 +15,28 @@ import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
     if(action.type === ADD_ITEM){
         const productIfAny = shopping_cart.find(product => product.id === action.payload.id);
         if(productIfAny){
-           return {shopping_cart: shopping_cart.map( product => {
-               if(product.id === productIfAny.id) return { ...product, quantity: product.quantity + 1 }
-               return product;
-           })}
+            const new_state = {shopping_cart: shopping_cart.map( product => {
+                if(product.id === productIfAny.id) return { ...product, quantity: product.quantity + 1 }
+                return product;
+            })};
+            console.log(new_state);
+           return new_state;
         }
 
-        return { shopping_cart: shopping_cart.concat([
-           {
-               ...action.payload,
-               quantity: 1
-           }
-       ])};
+        const new_state = { shopping_cart: shopping_cart.concat([
+            {
+                ...action.payload,
+                quantity: 1
+            }
+        ])};
+        console.log(new_state);
+        return new_state;
     }
 
     if(action.type === CLEAR_SHOPPING_CART){
+        console.log({ shopping_cart: [] });
         return { shopping_cart: [] };
     }
 
-    return { shopping_cart };
+    return { shopping_cart: shopping_cart };
 }
