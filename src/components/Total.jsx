@@ -3,7 +3,7 @@ import Price from './Price';
 
 export default ({shoppingCart}) => {
     const total = shoppingCart.reduce(
-        (total, product) => product.unit_amount * product.quantity + total, 0
+        (total, product) => product.unit_amount * 1 + total, 0
     );
     return(
         <div>

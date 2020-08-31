@@ -1,16 +1,19 @@
 import React from 'React';
 import ClearShoppingCart from './ClearShoppingCart';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { clearShoppingCart } from '../state/actions/shopping_cart';
 
-export default(props) => {
+const ClearChoppingCartBtn = ({}) => {
     const dispatch = useDispatch();
 
-    const clear = () => {
+    const clearShoppingCartEvent = (ev) => {
         dispatch(clearShoppingCart())
     }
 
     return(
-        <ClearShoppingCart clear={clear} />
+        <ClearShoppingCart clear={clearShoppingCartEvent} />
     )
 }
+
+const mapStateToProps = (state) => state.shopping_cart;
+export default connect(null, {clearShoppingCart})(ClearChoppingCartBtn)

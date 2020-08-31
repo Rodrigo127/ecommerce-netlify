@@ -16,7 +16,7 @@ const navItems = [
 
 export default (props) => {
     const total = props.shopping_cart.reduce(
-        (total, product) => product.quantity + total, 0
+        (total, product) => 1 + total, 0
     );
     return(
         <header className="bg-blue-900 text-blue-100 shadow-md">
