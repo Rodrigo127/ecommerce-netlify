@@ -17,3 +17,6 @@ export const addItem = (product) => {
     }
 }
 
+export const clearShoppingCart = () => ({
+    type: CLEAR_SHOPPING_CART
+})
