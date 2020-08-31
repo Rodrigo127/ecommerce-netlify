@@ -25,6 +25,9 @@ export default (props) => {
                         ))
                     }
                 </ul>
+                <Link to="/carrito" className="hover:bg-blue-800 bg-blue-500 px-6 py-4 inline-block">
+                    {props.shopping_cart.length}
+                </Link>
             </nav>
         </header>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import Price from './Price';
-import AddToCart from "./AddToCart";
+import AddToCartConnected from "./AddToCartConnected";
 
 export default ({product, prices}) => {
     const price = prices[0];
@@ -22,7 +22,7 @@ export default ({product, prices}) => {
             </header>
             <div className="text-center p-6">
                 <h1 className="text-3xl uppercase mb-4">{product.name}</h1>
-                <AddToCart sku={price} />
+                <AddToCartConnected sku={price} />
             </div>
         </article>
     )
