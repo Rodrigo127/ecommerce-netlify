@@ -7,7 +7,7 @@
  * Son Funciones puras
  */
 
-import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
+import { ADD_ITEM,CLEAR_SHOPPING_CART,DUMMY_ACTION } from "../actionTypes";
 
  export default function(state = {}, action){
     const {shopping_cart} = state;
@@ -34,6 +34,11 @@ import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
     if(action.type === CLEAR_SHOPPING_CART){
         return { shopping_cart: [] };
     }
+
+    if(action.type === DUMMY_ACTION){
+        console.log("executing dummy action");
+        return state;
+    }   
 
     return { shopping_cart: shopping_cart };
 }
