@@ -19,7 +19,6 @@ import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
                 if(product.id === productIfAny.id) return { ...product, quantity: product.quantity + 1 }
                 return product;
             })};
-            console.log(new_state);
            return new_state;
         }
 
@@ -29,12 +28,10 @@ import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
                 quantity: 1
             }
         ])};
-        console.log(new_state);
         return new_state;
     }
 
     if(action.type === CLEAR_SHOPPING_CART){
-        console.log({ shopping_cart: [] });
         return { shopping_cart: [] };
     }
 
