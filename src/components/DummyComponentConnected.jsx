@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import DummyComponent from './DummyComponent';
 import {connect, useDispatch} from "react-redux";
 import { dummyAction } from '../state/actions/shopping_cart';
