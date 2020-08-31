@@ -16,3 +16,7 @@ export const addItem = (product) => {
         payload: product
     }
 }
+
+export const clearShoppingCart = () => ({
+    type: CLEAR_SHOPPING_CART
+})
