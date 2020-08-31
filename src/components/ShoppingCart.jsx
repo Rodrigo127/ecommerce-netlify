@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from './CartItem';
 import Total from './Total';
+import ClearShoppingCartConnected from "./ClearShoppingCartConnected";
 
 export default ({ shoppingCart }) => {
     return(
@@ -9,6 +10,9 @@ export default ({ shoppingCart }) => {
                 <div className="flex-1">
                     <header className="flex p-6 item-center">
                         <h2 className="text-3xl flex-1 font-semibold">Mi carrito de compras</h2>
+                        <div>
+                            <ClearShoppingCartConnected />
+                        </div>
                     </header>
                     <ul>
                         {
