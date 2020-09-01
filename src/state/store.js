@@ -1,10 +1,16 @@
 import { createStore, compose, applyMiddleware } from "redux";
-import shopping_cart from "./reducers/shopping_cart";
+import reducer from './reducers';
+import { save, load } from 'redux-localstorage-simple';
 
-export default () => createStore(
-    shopping_cart,
-    {shopping_cart: []},
+const reduxCreateStore = ()=> createStore(
+    reducer, 
+    load(), 
     compose(
+        /*window.devtoolsExtension ? window.devtoolsExtension() : f => f*/
         /*window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/
     )
 );
+
+export default applyMiddleware(
+    save()
+)(reduxCreateStore);

@@ -7,39 +7,32 @@
  * Son Funciones puras
  */
 
-import { ADD_ITEM,CLEAR_SHOPPING_CART,DUMMY_ACTION } from "../actionTypes";
+import { createStore } from "redux";
+import { ADD_ITEM,CLEAR_SHOPPING_CART } from "../actionTypes";
 
- export default function(state = {}, action){
-    const {shopping_cart} = state;
+ export default function(state = [], action){
+     const shopping_cart = state;
 
-    switch (action.type){
-        case ADD_ITEM:
-            const productIfAny = shopping_cart.find(product => product.id === action.payload.id);
-            if(productIfAny){
-                const new_state = {shopping_cart: shopping_cart.map( product => {
-                    if(product.id === productIfAny.id) return { ...product, quantity: product.quantity + 1 }
-                    return product;
-                })};
-               return new_state;
+     if(action.type === ADD_ITEM){
+         const productIfAny = shopping_cart.find(product => product.id === action.payload.id);
+         if(productIfAny){
+            return shopping_cart.map( product => {
+                if(product.id === productIfAny.id) return { ...product, quantity: product.quantity + 1 }
+                return product;
+            })
+         }
+
+         return shopping_cart.concat([
+            {
+                ...action.payload,
+                quantity: 1
             }
-    
-            const new_state = { shopping_cart: shopping_cart.concat([
-                {
-                    ...action.payload,
-                    quantity: 1
-                }
-            ])};
-            return new_state;
+        ]);
+     }
 
-        case CLEAR_SHOPPING_CART:
-            return { shopping_cart: [] };
+     if(action.type === CLEAR_SHOPPING_CART){
+         return [];
+     }
 
-        case DUMMY_ACTION:
-            console.log("executing dummy action");
-            console.log(action.payload);
-            return state;
-
-        default:
-            return { shopping_cart: shopping_cart };
-    }
-}
+     return shopping_cart;
+ }
